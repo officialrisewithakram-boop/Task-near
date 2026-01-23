@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TaskNear - Customer Booking</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Booking | Tasknear</title>
 </head>
 <body>
 
-<h2>Book a Service</h2>
+<h2>Customer Booking Form</h2>
 
 <input type="text" id="name" placeholder="Your Name" required><br><br>
 <input type="text" id="phone" placeholder="Phone Number" required><br><br>
+<input type="text" id="address" placeholder="Address" required><br><br>
 
 <select id="service">
-  <option value="Carpenter">Carpenter</option>
-  <option value="Plumber">Plumber</option>
-  <option value="Electrician">Electrician</option>
-  <option value="Welder">Welder</option>
-  <option value="AC Installation">AC Installation</option>
-  <option value="Painter">Painter</option>
   <option value="Society Maintenance">Society Maintenance</option>
   <option value="Office Electrical / Plumbing">Office Electrical / Plumbing</option>
-  <option value="Home Interior/Decor">Home Interior/Decor</option>
+  <option value="Shops & Commercial Spaces">Shops & Commercial Spaces</option>
+  <option value="Home Decor / Interior Designing">Home Decor / Interior Designing</option>
 </select><br><br>
 
-<input type="text" id="location" placeholder="Your Location (Noida/Delhi/Ghaziabad)" required><br><br>
+<input type="date" id="date" required><br><br>
+<input type="time" id="time" required><br><br>
 
 <button onclick="bookNow()">Book Now</button>
 
@@ -32,25 +27,15 @@
   function bookNow() {
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
     const service = document.getElementById("service").value;
-    const location = document.getElementById("location").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
 
-    if (!name || !phone || !location) {
-      alert("Please fill all details");
-      return;
-    }
+    const message = `Booking Request:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0AService: ${service}%0ADate: ${date}%0ATime: ${time}`;
 
-    const message = `TaskNear Booking:
-Name: ${name}
-Phone: ${phone}
-Service: ${service}
-Location: ${location}
-Price: ₹850 per day
-Note: Material extra. Contract based.`;
-
-    // WhatsApp link (replace number with your business number)
-    const whatsappNumber = "919756469154";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappNumber = "919756468154"; // Your WhatsApp number with country code
+    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
 
     window.open(url, "_blank");
   }
