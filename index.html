@@ -1,272 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaskNear | Expert Services at Your Doorstep</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-    body { background: #f4f7fb; }
-
-    /* Header */
-    header {
-      background: #0b3d91;
-      color: #fff;
-      padding: 18px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    header h1 { font-size: 22px; letter-spacing: 1px; }
-    header nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #0b3d91, #2b7bff);
-      color: #fff;
-      padding: 60px 30px;
-      text-align: center;
-    }
-    .hero h2 { font-size: 36px; margin-bottom: 10px; }
-    .hero p { font-size: 18px; margin-bottom: 20px; }
-    .btn {
-      background: #fff;
-      color: #0b3d91;
-      border: none;
-      padding: 12px 20px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .btn:hover { opacity: 0.9; }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 30px auto;
-    }
-
-    /* Section Title */
-    .title {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #0b3d91;
-    }
-
-    /* Services */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    .card h3 { margin-bottom: 10px; color: #0b3d91; }
-    .card p { color: #555; }
-
-    /* Booking Form */
-    .form-box {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .form-box input, .form-box select {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-
-    /* Footer */
-    footer {
-      background: #0b3d91;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .services { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      header { flex-direction: column; gap: 10px; }
-      .services { grid-template-columns: 1fr; }
-      .hero h2 { font-size: 28px; }
-    }
-  </style>
+  <title>Login | Tasknear</title>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>TaskNear</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#booking">Booking</a>
-      <a href="#contact">Contact</a>
-      <a href="#login">Login</a>
-    </nav>
-  </header>
+<h2>Login / Sign Up</h2>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h2>Expert Services at Your Doorstep</h2>
-    <p>Carpenter, Plumber, Electrician, Welder, AC Installation, Painter & More.</p>
-    <button class="btn" onclick="scrollToBooking()">Book Now</button>
-  </section>
+<input type="email" id="email" placeholder="Email" required><br><br>
+<input type="password" id="password" placeholder="Password" required><br><br>
 
-  <div class="container">
+<button onclick="signUp()">Sign Up</button>
+<button onclick="signIn()">Sign In</button>
 
-    <!-- Services -->
-    <section id="services">
-      <h2 class="title">Our Services</h2>
-      <div class="services">
-        <div class="card">
-          <h3>Carpenter</h3>
-          <p>Woodwork, furniture repair</p>
-        </div>
-        <div class="card">
-          <h3>Plumber</h3>
-          <p>Water leakage, pipe repair</p>
-        </div>
-        <div class="card">
-          <h3>Electrician</h3>
-          <p>Wiring, switch repair</p>
-        </div>
-        <div class="card">
-          <h3>Welder</h3>
-          <p>Metal repair, welding</p>
-        </div>
-        <div class="card">
-          <h3>AC Installation</h3>
-          <p>AC setup & maintenance</p>
-        </div>
-        <div class="card">
-          <h3>Painter</h3>
-          <p>Home painting & touchup</p>
-        </div>
-        <div class="card">
-          <h3>Society Maintenance</h3>
-          <p>Residential society support</p>
-        </div>
-        <div class="card">
-          <h3>Office Electrical/Plumbing</h3>
-          <p>Commercial maintenance</p>
-        </div>
-        <div class="card">
-          <h3>Home Interior Design</h3>
-          <p>Home decor & interior</p>
-        </div>
-      </div>
-    </section>
+<p id="msg"></p>
 
-    <!-- Booking -->
-    <section id="booking">
-      <h2 class="title">Booking Form</h2>
-      <div class="form-box">
-        <input type="text" id="cname" placeholder="Your Name">
-        <input type="text" id="cphone" placeholder="Phone Number">
-        <input type="text" id="caddress" placeholder="Address (Noida/Delhi/Ghaziabad)">
-        <select id="cservice">
-          <option value="">Select Service</option>
-          <option value="Carpenter">Carpenter</option>
-          <option value="Plumber">Plumber</option>
-          <option value="Electrician">Electrician</option>
-          <option value="Welder">Welder</option>
-          <option value="AC Installation">AC Installation</option>
-          <option value="Painter">Painter</option>
-          <option value="Society Maintenance">Society Maintenance</option>
-          <option value="Office Electrical/Plumbing">Office Electrical/Plumbing</option>
-          <option value="Home Interior Design">Home Interior Design</option>
-        </select>
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        <button class="btn" onclick="sendWhatsApp()">Book Now (WhatsApp)</button>
-        <p id="bookingMsg"></p>
-      </div>
-    </section>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAfwsUYrh4Eno1debFsKRK36ZWadLsNO0M",
+    authDomain: "tsak-nrar.firebaseapp.com",
+    projectId: "tsak-nrar",
+    appId: "1:233202188138:web:885ba1ce6402baa90e6f13"
+  };
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2 class="title">Contact Us</h2>
-      <div class="form-box">
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="email" id="email" placeholder="Your Email">
-        <textarea id="message" rows="4" placeholder="Your Message"></textarea>
-        <button class="btn" onclick="contactSubmit()">Send Message</button>
-      </div>
-    </section>
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-    <!-- Login -->
-    <section id="login">
-      <h2 class="title">Login / Signup</h2>
-      <div class="form-box">
-        <input type="email" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="Password">
-        <button class="btn" onclick="signUp()">Sign Up</button>
-        <button class="btn" onclick="signIn()">Sign In</button>
-        <p id="msg"></p>
-      </div>
-    </section>
+  window.signUp = function () {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  </div>
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        document.getElementById("msg").innerText = "Signup Successful ✅";
+      })
+      .catch(error => {
+        document.getElementById("msg").innerText = error.message;
+      });
+  }
 
-  <footer>
-    <p>Call/WhatsApp: 9756469154 | Service Area: Noida, Delhi, Ghaziabad</p>
-    <p>© 2026 TaskNear</p>
-  </footer>
+  window.signIn = function () {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  <script>
-    function scrollToBooking(){
-      document.getElementById("booking").scrollIntoView({behavior: "smooth"});
-    }
-
-    function sendWhatsApp(){
-      var name = document.getElementById("cname").value;
-      var phone = document.getElementById("cphone").value;
-      var address = document.getElementById("caddress").value;
-      var service = document.getElementById("cservice").value;
-
-      if(name=="" || phone=="" || address=="" || service==""){
-        document.getElementById("bookingMsg").innerText = "Please fill all fields.";
-        return;
-      }
-
-      var msg = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\nService: ${service}\nPrice: ₹850/day\n(Material extra)`;
-      var whatsappNumber = "919756469154";
-      var url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
-    }
-
-    function contactSubmit(){
-      alert("Thank you! We will contact you soon.");
-    }
-
-    function signUp(){
-      document.getElementById("msg").innerText = "SignUp feature coming soon!";
-    }
-    function signIn(){
-      document.getElementById("msg").innerText = "Login feature coming soon!";
-    }
-  </script>
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        document.getElementById("msg").innerText = "Login Successful ✅";
+      })
+      .catch(error => {
+        document.getElementById("msg").innerText = error.message;
+      });
+  }
+</script>
 
 </body>
 </html>
