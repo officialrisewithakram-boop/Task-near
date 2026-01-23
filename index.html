@@ -176,4 +176,31 @@
 
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script>
+</script><!DOCTYPE html>
+<html>
+<head>
+  <title>TaskNear Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Login</h2>
+
+<select id="role">
+  <option value="customer">Customer</option>
+  <option value="provider">Service Provider</option>
+</select><br><br>
+
+<input type="email" id="email" placeholder="Email"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+<button onclick="signup()">Sign Up</button>
+
+<p id="msg"></p>
+
+<!-- Firebase JS -->
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>
