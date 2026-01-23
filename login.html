@@ -7,6 +7,11 @@
 
 <h2>Login / Sign Up</h2>
 
+<select id="role">
+  <option value="customer">Customer</option>
+  <option value="provider">Provider</option>
+</select><br><br>
+
 <input type="email" id="email" placeholder="Email" required><br><br>
 <input type="password" id="password" placeholder="Password" required><br><br>
 
@@ -34,10 +39,20 @@
   window.signUp = function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const role = document.getElementById("role").value;
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
+        // Save role in localStorage
+        localStorage.setItem("userRole", role);
         document.getElementById("msg").innerText = "Signup Successful ✅";
+
+        // Redirect based on role
+        if (role === "customer") {
+          window.location.href = "customer.html";
+        } else {
+          window.location.href = "provider.html";
+        }
       })
       .catch(error => {
         document.getElementById("msg").innerText = error.message;
@@ -47,10 +62,18 @@
   window.signIn = function () {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const role = document.getElementById("role").value;
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
+        localStorage.setItem("userRole", role);
         document.getElementById("msg").innerText = "Login Successful ✅";
+
+        if (role === "customer") {
+          window.location.href = "customer.html";
+        } else {
+          window.location.href = "provider.html";
+        }
       })
       .catch(error => {
         document.getElementById("msg").innerText = error.message;
