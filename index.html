@@ -1,206 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>TaskNear | Home Services</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskNear | Expert Services at Your Doorstep</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    body { background: #f4f7fb; }
+
+    /* Header */
+    header {
+      background: #0b3d91;
+      color: #fff;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header h1 { font-size: 22px; letter-spacing: 1px; }
+    header nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0b3d91, #2b7bff);
+      color: #fff;
+      padding: 60px 30px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; margin-bottom: 20px; }
+    .btn {
+      background: #fff;
+      color: #0b3d91;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover { opacity: 0.9; }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    /* Section Title */
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0b3d91;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .card h3 { margin-bottom: 10px; color: #0b3d91; }
+    .card p { color: #555; }
+
+    /* Booking Form */
+    .form-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .form-box input, .form-box select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b3d91;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .services { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 10px; }
+      .services { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>TaskNear</h1>
-  <p>Expert services at your doorstep</p>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>TaskNear</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
 
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card">🪚 Carpenter</div>
-    <div class="card">🚰 Plumber</div>
-    <div class="card">💡 Electrician</div>
-    <div class="card">🔥 Welder</div>
-    <div class="card">❄️ AC Installation</div>
-    <div class="card">🎨 Painter</div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Expert Services at Your Doorstep</h2>
+    <p>Carpenter, Plumber, Electrician, Welder, AC Installation, Painter & More.</p>
+    <button class="btn" onclick="scrollToBooking()">Book Now</button>
+  </section>
+
+  <div class="container">
+
+    <!-- Services -->
+    <section id="services">
+      <h2 class="title">Our Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Carpenter</h3>
+          <p>Woodwork, furniture repair</p>
+        </div>
+        <div class="card">
+          <h3>Plumber</h3>
+          <p>Water leakage, pipe repair</p>
+        </div>
+        <div class="card">
+          <h3>Electrician</h3>
+          <p>Wiring, switch repair</p>
+        </div>
+        <div class="card">
+          <h3>Welder</h3>
+          <p>Metal repair, welding</p>
+        </div>
+        <div class="card">
+          <h3>AC Installation</h3>
+          <p>AC setup & maintenance</p>
+        </div>
+        <div class="card">
+          <h3>Painter</h3>
+          <p>Home painting & touchup</p>
+        </div>
+        <div class="card">
+          <h3>Society Maintenance</h3>
+          <p>Residential society support</p>
+        </div>
+        <div class="card">
+          <h3>Office Electrical/Plumbing</h3>
+          <p>Commercial maintenance</p>
+        </div>
+        <div class="card">
+          <h3>Home Interior Design</h3>
+          <p>Home decor & interior</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking">
+      <h2 class="title">Booking Form</h2>
+      <div class="form-box">
+        <input type="text" id="cname" placeholder="Your Name">
+        <input type="text" id="cphone" placeholder="Phone Number">
+        <input type="text" id="caddress" placeholder="Address (Noida/Delhi/Ghaziabad)">
+        <select id="cservice">
+          <option value="">Select Service</option>
+          <option value="Carpenter">Carpenter</option>
+          <option value="Plumber">Plumber</option>
+          <option value="Electrician">Electrician</option>
+          <option value="Welder">Welder</option>
+          <option value="AC Installation">AC Installation</option>
+          <option value="Painter">Painter</option>
+          <option value="Society Maintenance">Society Maintenance</option>
+          <option value="Office Electrical/Plumbing">Office Electrical/Plumbing</option>
+          <option value="Home Interior Design">Home Interior Design</option>
+        </select>
+
+        <button class="btn" onclick="sendWhatsApp()">Book Now (WhatsApp)</button>
+        <p id="bookingMsg"></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="title">Contact Us</h2>
+      <div class="form-box">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+        <button class="btn" onclick="contactSubmit()">Send Message</button>
+      </div>
+    </section>
+
+    <!-- Login -->
+    <section id="login">
+      <h2 class="title">Login / Signup</h2>
+      <div class="form-box">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn" onclick="signUp()">Sign Up</button>
+        <button class="btn" onclick="signIn()">Sign In</button>
+        <p id="msg"></p>
+      </div>
+    </section>
+
   </div>
-</section>
 
-<section class="cta">
-  <h2>Book Trusted Professionals</h2>
-  <button onclick="book()">Book Now</button>
-</section><section id="booking">
-  <h2>Booking Form</h2>
-  <form id="bookingForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="phone" placeholder="Phone Number" required>
-    <input type="text" id="service" placeholder="Service (e.g., Carpenter)" required>
-    <input type="text" id="location" placeholder="Your Location" required>
-    <button type="submit">Send Booking on WhatsApp</button>
-  </form>
-</section>
+  <footer>
+    <p>Call/WhatsApp: 9756469154 | Service Area: Noida, Delhi, Ghaziabad</p>
+    <p>© 2026 TaskNear</p>
+  </footer>
 
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", function(e){
-    e.preventDefault();
+  <script>
+    function scrollToBooking(){
+      document.getElementById("booking").scrollIntoView({behavior: "smooth"});
+    }
 
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let service = document.getElementById("service").value;
-    let location = document.getElementById("location").value;
+    function sendWhatsApp(){
+      var name = document.getElementById("cname").value;
+      var phone = document.getElementById("cphone").value;
+      var address = document.getElementById("caddress").value;
+      var service = document.getElementById("cservice").value;
 
-    let message = `Booking Request:\nName: ${name}\nPhone: ${phone}\nService: ${service}\nLocation: ${location}\nPrice: ₹850 per day\nNote: Material charges extra.`;
+      if(name=="" || phone=="" || address=="" || service==""){
+        document.getElementById("bookingMsg").innerText = "Please fill all fields.";
+        return;
+      }
 
-    // WhatsApp number (your number)
-    let whatsappNumber = "919756469154";
+      var msg = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\nService: ${service}\nPrice: ₹850/day\n(Material extra)`;
+      var whatsappNumber = "919756469154";
+      var url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
 
-    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    function contactSubmit(){
+      alert("Thank you! We will contact you soon.");
+    }
 
-    window.open(url, "_blank");
-  });
-</script>
-
-<footer>
-  <p>© 2026 TaskNear. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body><section id="contracts">
-  <h2>Contract-Based Services</h2>
-  <p>We provide professional contract-based services for residential and commercial needs.</p>
-
-  <ul>
-    <li>Society Maintenance</li>
-    <li>Office Electrical & Plumbing Work</li>
-    <li>Shops & Commercial Spaces</li>
-    <li>Home Interior Designing</li>
-    <li>Home Decor & Renovation Work</li>
-    <li>Modular Kitchen & Furniture Work</li>
-    <li>False Ceiling, Painting & Flooring</li>
-    <li>Complete Home Repair & Maintenance Contracts</li>
-  </ul>
-</section><!-- Existing Services Section -->
-<section id="services">
-  ...existing code...
-</section>
-
-<!-- New code add here -->
-<section id="contracts">
-  ...new code...
-</section><section id="pricing">
-  <h2>Pricing</h2>
-  <p>हमारी सभी सेवाएँ <b>₹850 / day</b> पर आधारित हैं (एक घंटा या पूरा दिन, फिर भी ₹850)</p>
-  <p>Material या extra charges अलग से होंगे।</p>
-
-  <div class="price-card">
-    <h3>All Services</h3>
-    <p><b>₹850 / Day</b></p>
-    <p>Contract Based | Same Price for 1 hour or Full Day</p>
-  </div>
-</section><section id="booking">
-  <h2>Book a Service</h2>
-  <form id="bookingForm">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
-    <input type="text" name="location" placeholder="Location (Noida/Delhi/Ghaziabad)" required>
-    <select name="service" required>
-      <option value="">Select Service</option>
-      <option value="Carpenter">Carpenter</option>
-      <option value="Plumber">Plumber</option>
-      <option value="Electrician">Electrician</option>
-      <option value="Welder">Welder</option>
-      <option value="AC Installation">AC Installation</option>
-      <option value="Painter">Painter</option>
-      <option value="Home Interior">Home Interior</option>
-      <option value="Society Maintenance">Society Maintenance</option>
-    </select>
-    <textarea name="details" placeholder="Describe your requirement" required></textarea>
-    <button type="submit">Book Now</button>
-  </form>
-</section><section id="contact">
-  <h2>Contact Us</h2>
-  <p>📞 WhatsApp / Call: 9756469154</p>
-  <p>📍 Location: Noida / Delhi / Ghaziabad</p>
-</section><section id="login">
-  <h2>Login</h2>
-
-  <div class="login-box">
-    <button onclick="showCustomer()">Customer Login</button>
-    <button onclick="showProvider()">Provider Login</button>
-
-    <div id="customerForm" style="display:none;">
-      <h3>Customer Login</h3>
-      <input type="text" id="custUser" placeholder="Username">
-      <input type="password" id="custPass" placeholder="Password">
-      <button onclick="customerLogin()">Login</button>
-    </div>
-
-    <div id="providerForm" style="display:none;">
-      <h3>Provider Login</h3>
-      <input type="text" id="provUser" placeholder="Username">
-      <input type="password" id="provPass" placeholder="Password">
-      <button onclick="providerLogin()">Login</button>
-    </div>
-  </div>
-</section>
-
-<script>
-  function showCustomer(){
-    document.getElementById("customerForm").style.display = "block";
-    document.getElementById("providerForm").style.display = "none";
-  }
-
-  function showProvider(){
-    document.getElementById("providerForm").style.display = "block";
-    document.getElementById("customerForm").style.display = "none";
-  }
-
-  function customerLogin(){
-    let user = document.getElementById("custUser").value;
-    let pass = document.getElementById("custPass").value;
-
-    if(user == "customer" && pass == "1234"){
-      alert("Customer Login Successful");
-    } else {
-      alert
-</html><script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/...";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/...";
-
-  const firebaseConfig = {
-    apiKey: "...",
-    authDomain: "...",
-    projectId: "...",
-    storageBucket: "...",
-    messagingSenderId: "...",
-    appId: "..."
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script><!DOCTYPE html>
-<html>
-<head>
-  <title>TaskNear Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-<h2>Login</h2>
-
-<select id="role">
-  <option value="customer">Customer</option>
-  <option value="provider">Service Provider</option>
-</select><br><br>
-
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
-
-<button onclick="login()">Login</button>
-<button onclick="signup()">Sign Up</button>
-
-<p id="msg"></p>
-
-<!-- Firebase JS -->
-<script type="module" src="auth.js"></script>
+    function signUp(){
+      document.getElementById("msg").innerText = "SignUp feature coming soon!";
+    }
+    function signIn(){
+      document.getElementById("msg").innerText = "Login feature coming soon!";
+    }
+  </script>
 
 </body>
 </html>
