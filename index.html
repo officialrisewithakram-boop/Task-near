@@ -119,5 +119,46 @@
   <h2>Contact Us</h2>
   <p>📞 WhatsApp / Call: 9756469154</p>
   <p>📍 Location: Noida / Delhi / Ghaziabad</p>
+</section><section id="login">
+  <h2>Login</h2>
+
+  <div class="login-box">
+    <button onclick="showCustomer()">Customer Login</button>
+    <button onclick="showProvider()">Provider Login</button>
+
+    <div id="customerForm" style="display:none;">
+      <h3>Customer Login</h3>
+      <input type="text" id="custUser" placeholder="Username">
+      <input type="password" id="custPass" placeholder="Password">
+      <button onclick="customerLogin()">Login</button>
+    </div>
+
+    <div id="providerForm" style="display:none;">
+      <h3>Provider Login</h3>
+      <input type="text" id="provUser" placeholder="Username">
+      <input type="password" id="provPass" placeholder="Password">
+      <button onclick="providerLogin()">Login</button>
+    </div>
+  </div>
 </section>
+
+<script>
+  function showCustomer(){
+    document.getElementById("customerForm").style.display = "block";
+    document.getElementById("providerForm").style.display = "none";
+  }
+
+  function showProvider(){
+    document.getElementById("providerForm").style.display = "block";
+    document.getElementById("customerForm").style.display = "none";
+  }
+
+  function customerLogin(){
+    let user = document.getElementById("custUser").value;
+    let pass = document.getElementById("custPass").value;
+
+    if(user == "customer" && pass == "1234"){
+      alert("Customer Login Successful");
+    } else {
+      alert
 </html>
