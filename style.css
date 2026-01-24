@@ -8,8 +8,12 @@
 
 /* BODY */
 body {
- background: #0b3d91;
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
   color: #222;
+}
 }
 
 /* HEADER */
