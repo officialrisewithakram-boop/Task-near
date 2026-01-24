@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f5f7fb;
   color: #222;
+  min-height: auto;   /* FIX */
 }
 
 /* HEADER */
@@ -19,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* 👈 mobile fix */
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -49,4 +50,73 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* HERO
+/* HERO SECTION */
+.hero {
+  background: #0b3d91;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* SERVICES SECTION */
+.services {
+  background: #ffffff;
+  padding: 30px 15px;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3d91;
+}
+
+/* SERVICE CARDS */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0b3d91;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+}
+
+.contact a {
+  color: #0b3d91;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: #0b3d91;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: 0;   /* FIX extra space */
+}
+
+/* GLOBAL SECTION FIX */
+section {
+  height: auto;        /* 🔥 IMPORTANT */
+  padding-bottom: 20px;
+}
