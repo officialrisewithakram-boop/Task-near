@@ -165,3 +165,18 @@ section {
   height: auto;        /* 🔥 IMPORTANT */
   padding-bottom: 20px;
 }
+.social-icons {
+  margin-top: 12px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-icons a:hover {
+  text-decoration: underline;
+}
