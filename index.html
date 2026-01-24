@@ -6,22 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     html { scroll-behavior: smooth; }
-
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #0b3d91;
       color: #fff;
     }
 
-    /* HEADER */
     header {
       background: linear-gradient(90deg, #0b3d91, #3a7bfa);
       padding: 15px 25px;
@@ -31,44 +23,23 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      flex-wrap: wrap;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav {
-      margin-top: 8px;
-    }
-
+    .logo { font-size: 22px; font-weight: bold; }
     nav a {
       color: #fff;
       margin-left: 18px;
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover { color: #ffcc00; }
 
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    nav a.book {
-      color: #ffcc00;
-    }
-
-    /* HERO */
     .hero {
       text-align: center;
       padding: 60px 20px;
     }
+    .hero h1 span { color: #ffcc00; }
 
-    .hero h1 span {
-      color: #ffcc00;
-    }
-
-    /* SECTION */
     .section {
       padding: 60px 20px;
       background: #fff;
@@ -77,15 +48,9 @@
     }
 
     .section h2 {
-      margin-bottom: 15px;
+      margin-top: 0;
     }
 
-    .section p {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -95,26 +60,29 @@
     }
 
     .card {
-      background: #fff;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       font-weight: bold;
-      color: #0b3d91;
+      background: #f5f5f5;
     }
 
     .card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: #0b3d91;
-      color: #fff;
       text-decoration: none;
+      color: #0b3d91;
       font-weight: bold;
     }
 
-    /* FOOTER */
+    .card a:hover {
+      color: #ffcc00;
+    }
+
+    .service-area {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #0b3d91;
+    }
+
     footer {
       background: #0b3d91;
       color: #fff;
@@ -157,7 +125,7 @@
 
     .social-icons a {
       display: inline-block;
-      margin-right: 10px;
+      margin-right: 12px;
       text-decoration: none;
       color: #fff;
       font-weight: bold;
@@ -170,19 +138,15 @@
       opacity: 0.8;
     }
 
-    /* Mobile Fix */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
+    .contact-text {
+      font-weight: bold;
+      color: #0b3d91;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">Tasknear</div>
     <nav>
@@ -190,26 +154,23 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
-      <a href="customer.html" class="book">Book Now</a>
-      <a href="login.html" class="book">Login</a>
+      <a href="customer.html" style="color:#ffcc00;">Book Now</a>
+      <a href="login.html" style="color:#ffcc00;">Login</a>
     </nav>
   </header>
 
-  <!-- HOME -->
   <section id="home" class="hero">
     <h1>Welcome to <span>Tasknear</span></h1>
     <p>Book Home Services easily</p>
-    <p>📍 Service Area: <b>Noida • Delhi • Ghaziabad</b></p>
+    <p class="service-area">📍 Service Area: <b>Noida • Delhi • Ghaziabad</b></p>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="section">
     <h2>About Us</h2>
     <p>Tasknear is your trusted home service provider in Noida, Delhi & Ghaziabad.</p>
     <p>We offer fast, reliable & affordable services with verified professionals.</p>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="section">
     <h2>Our Services</h2>
 
@@ -256,9 +217,12 @@
         <a href="tel:919756468154">📞 Call Now</a>
       </div>
     </div>
+
+    <p style="margin-top:20px; font-weight:bold;">
+      📞 Contact: <a href="tel:919756468154" class="contact-text">+91 97564 68154</a>
+    </p>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p>📞 +91 97564 68154</p>
@@ -266,7 +230,6 @@
     <p>✉️ support@tasknear.com</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-left">
@@ -294,4 +257,14 @@
           <a href="https://wa.me/919756468154" target="_blank">💬 WhatsApp</a>
           <a href="https://instagram.com" target="_blank">📸 Instagram</a>
           <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-        </
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Tasknear. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
