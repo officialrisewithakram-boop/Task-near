@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login | Tasknear</title>
-</head>
-<body>
+<button onclick="logout()">🚪 Logout</button>
 
-<h2>Login / Sign Up</h2>
-
-<select id="userType">
-  <option value="customer">Customer</option>
-  <option value="provider">Provider</option>
-</select><br><br>
-
-<input type="email" id="email" placeholder="Email" required><br><br>
-<input type="password" id="password" placeholder="Password" required><br><br>
-
-<button onclick="signUp()">Sign Up</button>
-<button onclick="signIn()">Sign In</button><br><br>
-
-<button onclick="googleSignIn()">Sign in with Google</button>
-
-<p id="msg"></p>
-
-<!-- Firebase -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } 
+  import { getAuth, onAuthStateChanged, signOut }
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-  // 🔥 Firebase Config (Yahi paste karna hai)
   const firebaseConfig = {
     apiKey: "AIzaSyAfwsUYrh4Eno1debFsKRK36ZWadLsNO0M",
     authDomain: "tsak-nrar.firebaseapp.com",
@@ -38,59 +14,16 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
 
-  function redirectUser(userType) {
-    if(userType === "customer") {
-      window.location = "customer.html";
-    } else {
-      window.location = "provider.html";
+  onAuthStateChanged(auth, user => {
+    if (!user) {
+      location.href = "login.html";
     }
-  }
+  });
 
-  window.signUp = function () {
-    const userType = document.getElementById("userType").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        document.getElementById("msg").innerText = "Signup Successful ✅";
-        redirectUser(userType);
-      })
-      .catch(error => {
-        document.getElementById("msg").innerText = error.message;
-      });
-  }
-
-  window.signIn = function () {
-    const userType = document.getElementById("userType").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        document.getElementById("msg").innerText = "Login Successful ✅";
-        redirectUser(userType);
-      })
-      .catch(error => {
-        document.getElementById("msg").innerText = error.message;
-      });
-  }
-
-  window.googleSignIn = function() {
-    const userType = document.getElementById("userType").value;
-
-    signInWithPopup(auth, provider)
-      .then(() => {
-        document.getElementById("msg").innerText = "Google Login Successful ✅";
-        redirectUser(userType);
-      })
-      .catch(error => {
-        document.getElementById("msg").innerText = error.message;
-      });
+  window.logout = function () {
+    signOut(auth).then(() => {
+      location.href = "login.html";
+    });
   }
 </script>
-
-</body>
-</html>
