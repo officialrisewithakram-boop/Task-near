@@ -3,46 +3,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* BODY */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f7fb;
-  color: #333;
-  line-height: 1.6;
+  background: #f4f6f8;
+  color: #222;
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(90deg, #0d47a1, #1976d2);
-  padding: 15px 25px;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* NAVBAR */
+nav {
+  background: #0b3c91;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* LOGO */
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* NAVIGATION */
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #ffeb3b;
-}
-
-/* HERO SECTION */
-.hero {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
-  color: #fff;
-  padding: 70px 20px;
+  justify-content: center;
