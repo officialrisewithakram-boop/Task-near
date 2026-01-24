@@ -18,7 +18,18 @@ header {
   padding: 15px 25px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;header {
+  flex-wrap: wrap;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  display: inline-block;
+  margin: 6px 10px;
+}
 }
 
 .logo {
