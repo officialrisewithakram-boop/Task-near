@@ -53,3 +53,10 @@ nav {
       background:#ffcc00;
       color:#000;
 }
+footer {
+  background: #0b3d91;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 40px;
+}
