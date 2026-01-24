@@ -2,81 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Tasknear | Home Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tasknear | Home</title>
 
   <style>
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0b3d91;
       color: #fff;
     }
-
     header {
       background: linear-gradient(90deg, #0b3d91, #3a7bfa);
-      padding: 15px 20px;
+      padding: 15px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .nav-links a {
+    .logo { font-size: 22px; font-weight: bold; }
+    nav a {
       color: #fff;
+      margin-left: 18px;
       text-decoration: none;
-      margin-left: 15px;
       font-weight: bold;
     }
-
-    .nav-links a:hover {
-      color: #ffcc00;
-    }
+    nav a:hover { color: #ffcc00; }
 
     .hero {
       text-align: center;
       padding: 60px 20px;
     }
+    .hero h1 span { color: #ffcc00; }
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    .section {
+      padding: 60px 20px;
+      background: #fff;
+      color: #333;
+      text-align: center;
     }
 
-    .hero h1 span {
-      color: #ffcc00;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 900px;
       margin: auto;
-      color: rgba(255,255,255,0.9);
     }
-
-    .hero-buttons {
-      margin-top: 25px;
-    }
-
-    .hero-buttons a {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 8px;
-      border-radius: 8px;
-      text-decoration: none;
+    .card {
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       font-weight: bold;
-      background: #ffcc00;
-      color: #000;
     }
 
-    .hero-buttons a.secondary {
-      background: transparent;
-      border: 2px solid #fff;
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0b3d91;
       color: #fff;
     }
   </style>
@@ -85,30 +68,4 @@
 <body>
 
 <header>
-  <div class="logo">Tasknear</div>
-
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-    <a href="customer.html">Book Now</a>
-    <a href="login.html">Login</a>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <h1>Welcome to <span>Tasknear</span></h1>
-  <p>
-    We provide trusted home services like electrical work, plumbing,
-    carpentry, painting, and more — all at your doorstep.
-  </p>
-
-  <div class="hero-buttons">
-    <a href="customer.html">Book a Service</a>
-    <a href="#services" class="secondary">Explore Services</a>
-  </div>
-</section>
-
-</body>
-</html>
+  <div
