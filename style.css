@@ -107,7 +107,52 @@ nav a:hover {
 }
 
 /* FOOTER */
-footer {
+footer {footer {
+  background: #0b3d91;
+  color: #fff;
+  padding: 30px 20px;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-left h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-center,
+.footer-right {
+  min-width: 200px;
+}
+
+.footer-center h4,
+.footer-right h4 {
+  margin-bottom: 10px;
+}
+
+.footer-center a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
   background: #0b3d91;
   color: #fff;
   text-align: center;
