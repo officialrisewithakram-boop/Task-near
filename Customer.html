@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TaskNear - Booking</title>
+  <title>Book Service | Tasknear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f5ff;
+      padding: 20px;
+    }
+    .box {
+      max-width: 400px;
+      background: #fff;
+      margin: auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #25d366;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>Book a Service</h2>
+<div class="box">
+  <h2>📋 Book a Service</h2>
 
-<input type="text" id="name" placeholder="Your Name" required><br><br>
-<input type="text" id="phone" placeholder="Phone Number" required><br><br>
+  <input id="name" placeholder="Your Name">
+  <input id="phone" placeholder="Phone Number">
+  <select id="service">
+    <option>Electrician</option>
+    <option>Plumber</option>
+    <option>Painter</option>
+    <option>Carpenter</option>
+  </select>
+  <input id="location" placeholder="Your Location">
 
-<select id="service">
-  <option value="Carpenter">Carpenter</option>
-  <option value="Plumber">Plumber</option>
-  <option value="Electrician">Electrician</option>
-  <option value="Welder">Welder</option>
-  <option value="AC Installation">AC Installation</option>
-  <option value="Painter">Painter</option>
-  <option value="Society Maintenance">Society Maintenance</option>
-  <option value="Office Electrical / Plumbing">Office Electrical / Plumbing</option>
-  <option value="Home Interior/Decor">Home Interior/Decor</option>
-</select><br><br>
-
-<input type="text" id="location" placeholder="Your Location (Noida/Delhi/Ghaziabad)" required><br><br>
-
-<button onclick="bookNow()">Book Now</button>
+  <button onclick="send()">📲 Book on WhatsApp</button>
+</div>
 
 <script>
-  function bookNow() {
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const service = document.getElementById("service").value;
-    const location = document.getElementById("location").value;
+function send() {
+  let msg =
+   "Booking Request:%0A" +
+   "Name: " + name.value + "%0A" +
+   "Phone: " + phone.value + "%0A" +
+   "Service: " + service.value + "%0A" +
+   "Location: " + location.value;
 
-    if (!name || !phone || !location) {
-      alert("Please fill all details");
-      return;
-    }
-
-    const message = `TaskNear Booking:
-Name: ${name}
-Phone: ${phone}
-Service: ${service}
-Location: ${location}
-Price: ₹850 per day
-Note: Material extra. Contract based.`;
-
-    // WhatsApp link (replace number with your business number)
-    const whatsappNumber = "919756469154";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(url, "_blank");
-  }
+  window.open("https://wa.me/9756468154?text=" + msg, "_blank");
+}
 </script>
 
 </body>
