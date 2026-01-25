@@ -1,23 +1,193 @@
-/* ===== RESET ===== */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* ================= BODY ================= */
 body {
   font-family: Arial, sans-serif;
   background: #f5f7fb;
   color: #222;
+  line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 header {
   background: linear-gradient(90deg, #0b3d91, #3a7bfa);
-  padding: 12px 16px;
+  padding: 14px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ================= NAV ================= */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 6px 10px;
+  display: inline-block;
+}
+
+nav a.book,
+nav a.login {
+  color: #ffcc00;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: #0b3d91;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 span {
+  color: #ffcc00;
+}
+
+.hero p {
+  margin-top: 8px;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+section h2 {
+  color: #0b3d91;
+  margin-bottom: 15px;
+}
+
+/* ================= SERVICES ================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-weight: bold;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0b3d91;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #ff9900;
+}
+
+/* ================= CONTACT ================= */
+.contact-text {
+  color: #0b3d91;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #0b3d91;
+  color: #fff;
+  padding: 35px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-left h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-center,
+.footer-right {
+  min-width: 200px;
+}
+
+.footer-center h4,
+.footer-right h4 {
+  margin-bottom: 10px;
+}
+
+.footer-center a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+/* ================= SOCIAL ================= */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-icons a:hover {
+  text-decoration: underline;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
 }
