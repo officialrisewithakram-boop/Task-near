@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +11,7 @@
       background: #f5f7fb;
       color: #222;
     }
+
     header {
       background: #1f2937;
       padding: 12px 20px;
@@ -19,42 +19,92 @@
       justify-content: space-between;
       align-items: center;
     }
+
     header a {
       color: #fff;
       margin-left: 15px;
       text-decoration: none;
       font-size: 14px;
     }
+
+    /* Banner */
+    .banner {
+      background: linear-gradient(90deg, #0b3d91, #3a7bfa);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .banner p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 20px;
     }
-    .title {
-      text-align: center;
-      margin: 20px 0;
-    }
+
     .details {
       background: #fff;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: -50px;
     }
+
     .details h2 {
       margin-bottom: 10px;
     }
+
     .details p {
       margin: 8px 0;
+      line-height: 1.6;
     }
+
     .btn {
       display: inline-block;
       margin-top: 15px;
       background: #22c55e;
       color: #fff;
-      padding: 10px 15px;
+      padding: 12px 20px;
       border-radius: 6px;
       text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .feature h4 {
+      margin: 10px 0 5px;
+    }
+
+    .feature p {
+      margin: 0;
       font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
@@ -69,6 +119,98 @@
   </nav>
 </header>
 
+<!-- Banner -->
+<div class="banner">
+  <h1 id="serviceTitle">Service Details</h1>
+  <p id="serviceDesc">Fast and professional home service near you.</p>
+  <p>📍 Noida · Delhi · Ghaziabad</p>
+</div>
+
 <div class="container">
-  <div class="title">
-    <h1 id="service
+  <div class="details">
+    <h2 id="serviceName">Service</h2>
+    <p id="serviceInfo">Details about the service will appear here.</p>
+
+    <div class="features">
+      <div class="feature">
+        <h4>Fast Booking</h4>
+        <p>Book service in just 1 click.</p>
+      </div>
+      <div class="feature">
+        <h4>Verified Professionals</h4>
+        <p>Trusted and skilled workers.</p>
+      </div>
+      <div class="feature">
+        <h4>24/7 Support</h4>
+        <p>Call anytime for help.</p>
+      </div>
+      <div class="feature">
+        <h4>Best Price</h4>
+        <p>Affordable and transparent.</p>
+      </div>
+    </div>
+
+    <a id="whatsappLink" class="btn" href="#" target="_blank">Book on WhatsApp</a>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+
+  const data = {
+    plumber: {
+      title: "Plumber Service",
+      desc: "Water leak, pipe repair, bathroom fitting, etc.",
+      info: "We provide fast plumber service in your area. Call now!",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20Plumber%20service"
+    },
+    electrician: {
+      title: "Electrician Service",
+      desc: "Wiring, switchboard, fan repair, etc.",
+      info: "Professional electrician available for home service.",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20Electrician%20service"
+    },
+    painter: {
+      title: "Painter Service",
+      desc: "Home painting, wall color, touch-ups, etc.",
+      info: "Quality painting with best finish. Book now!",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20Painter%20service"
+    },
+    welder: {
+      title: "Welder Service",
+      desc: "Gate repair, grill welding, metal works, etc.",
+      info: "Expert welder for all metal works.",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20Welder%20service"
+    },
+    carpenter: {
+      title: "Carpenter Service",
+      desc: "Furniture repair, cabinet, woodwork, etc.",
+      info: "Best carpenter service near you.",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20Carpenter%20service"
+    },
+    "ac-installation": {
+      title: "AC Installation Service",
+      desc: "AC installation, gas refill, servicing, etc.",
+      info: "AC service available for all models.",
+      whatsapp: "https://wa.me/919756468154?text=Hi%20I%20want%20AC%20Installation%20service"
+    }
+  };
+
+  if (data[service]) {
+    document.getElementById("serviceTitle").innerText = data[service].title;
+    document.getElementById("serviceDesc").innerText = data[service].desc;
+    document.getElementById("serviceName").innerText = data[service].title;
+    document.getElementById("serviceInfo").innerText = data[service].info;
+    document.getElementById("whatsappLink").href = data[service].whatsapp;
+  } else {
+    document.getElementById("serviceTitle").innerText = "Service Not Found";
+    document.getElementById("serviceDesc").innerText = "Please go back and select a service.";
+    document.getElementById("serviceName").innerText = "No Service";
+    document.getElementById("serviceInfo").innerText = "Invalid service URL.";
+    document.getElementById("whatsappLink").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
