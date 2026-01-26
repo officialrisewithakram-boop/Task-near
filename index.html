@@ -1,142 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Carpenter Service | Tasknear</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Tasknear | Home Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f6f8;
-  color:#222;
-}
-header{
-  background:#ffffff;
-  padding:14px 20px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-header a{
-  text-decoration:none;
-  color:#222;
-  font-weight:bold;
-  font-size:20px;
-}
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-.service-box{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-.service-box h1{
-  margin-top:0;
-}
-.price{
-  font-size:18px;
-  font-weight:bold;
-  color:#0a8f3c;
-}
-ul{
-  padding-left:20px;
-}
-.book-box{
-  margin-top:20px;
-  background:#f1f7f3;
-  padding:15px;
-  border-radius:8px;
-}
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
-}
-button{
-  width:100%;
-  padding:12px;
-  background:#25D366;
-  color:#fff;
-  border:none;
-  font-size:16px;
-  border-radius:8px;
-  cursor:pointer;
-}
-button:hover{
-  background:#1ebc59;
-}
-footer{
-  background:#ffffff;
-  margin-top:30px;
-  padding:15px;
-  text-align:center;
-  font-size:14px;
-  color:#555;
-}
-</style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #1f2937;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #22c55e;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #1f2937;
+      color: #fff;
+      padding: 25px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-  <a href="../index.html">← Tasknear</a>
+  <strong style="color:#fff">Tasknear</strong>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<div class="container">
-  <div class="service-box">
-    <h1>Carpenter Service</h1>
-    <p>Professional carpenter for furniture repair, door fixing & custom work.</p>
+<section class="hero">
+  <h1>Welcome to Tasknear</h1>
+  <p>Book Home Services Easily</p>
+  <p>📍 Noida · Delhi · Ghaziabad</p>
+</section>
 
-    <p class="price">Starting from ₹299</p>
-
-    <h3>Services Included:</h3>
-    <ul>
-      <li>Door & window repair</li>
-      <li>Furniture fitting</li>
-      <li>Modular kitchen work</li>
-      <li>Custom wood work</li>
-    </ul>
-
-    <div class="book-box">
-      <h3>📲 Book on WhatsApp</h3>
-
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="text" id="location" placeholder="Your Location" required>
-      <textarea id="problem" placeholder="Describe your problem"></textarea>
-
-      <button onclick="whatsappBooking()">Book Now on WhatsApp</button>
-    </div>
+<section id="services" class="services">
+  <div class="card">
+    <h3>Plumber</h3>
+    <a href="services/plumber.html">View Details</a>
   </div>
-</div>
 
-<footer>
-  © 2026 Tasknear. All rights reserved.
+  <div class="card">
+    <h3>Electrician</h3>
+    <a href="services/electrician.html">View Details</a>
+  </div>
+
+  <div class="card">
+    <h3>Painter</h3>
+    <a href="services/painter.html">View Details</a>
+  </div>
+
+  <div class="card">
+    <h3>Welder</h3>
+    <a href="services/welder.html">View Details</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>📞 +91 97564 68154</p>
+  <p>📧 support@tasknear.com</p>
+  <p>© 2026 Tasknear. All rights reserved.</p>
 </footer>
-
-<script>
-function whatsappBooking(){
-  var name = document.getElementById("name").value;
-  var location = document.getElementById("location").value;
-  var problem = document.getElementById("problem").value;
-
-  var phone = "919756468154"; // your WhatsApp number
-
-  var message =
-    "Hello Tasknear,%0A%0A" +
-    "Service: Carpenter%0A" +
-    "Name: " + name + "%0A" +
-    "Location: " + location + "%0A" +
-    "Problem: " + problem;
-
-  window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
-}
-</script>
 
 </body>
 </html>
