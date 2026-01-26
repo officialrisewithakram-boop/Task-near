@@ -65,7 +65,6 @@
       border-radius:10px;
       text-align:center;
       box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      cursor:pointer;
     }
 
     .card h3{
@@ -117,11 +116,22 @@
       font-size:14px;
     }
 
-    /* Responsive */
-    @media (max-width: 600px){
-      .hero h1{
-        font-size:26px;
-      }
+    /* WhatsApp button */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
     }
   </style>
 </head>
@@ -145,24 +155,34 @@
 
 <!-- SERVICES -->
 <section id="services" class="services">
-  <div class="card" onclick="openService('carpenter')">
+  <div class="card" onclick="changeBanner('carpenter')">
     <h3>Carpenter</h3>
-    <button>View</button>
+    <button onclick="location.href='services/service.html?service=carpenter'">View</button>
   </div>
 
-  <div class="card" onclick="openService('plumber')">
+  <div class="card" onclick="changeBanner('plumber')">
     <h3>Plumber</h3>
-    <button>View</button>
+    <button onclick="location.href='services/service.html?service=plumber'">View</button>
   </div>
 
-  <div class="card" onclick="openService('electrician')">
+  <div class="card" onclick="changeBanner('electrician')">
     <h3>Electrician</h3>
-    <button>View</button>
+    <button onclick="location.href='services/service.html?service=electrician'">View</button>
   </div>
 
-  <div class="card" onclick="openService('ac')">
+  <div class="card" onclick="changeBanner('welder')">
+    <h3>Welder</h3>
+    <button onclick="location.href='services/service.html?service=welder'">View</button>
+  </div>
+
+  <div class="card" onclick="changeBanner('painter')">
+    <h3>Painter</h3>
+    <button onclick="location.href='services/service.html?service=painter'">View</button>
+  </div>
+
+  <div class="card" onclick="changeBanner('ac')">
     <h3>AC Service</h3>
-    <button>View</button>
+    <button onclick="location.href='services/service.html?service=ac-installation'">View</button>
   </div>
 </section>
 
@@ -179,6 +199,11 @@
 
 <!-- CALL BUTTON -->
 <a href="tel:+919756468154" class="call-float">📞 Call Now</a>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/919756468154" target="_blank" class="whatsapp-btn">
+  📱 WhatsApp
+</a>
 
 <!-- JS FOR BANNERS -->
 <script>
@@ -198,6 +223,14 @@
       img: "https://images.unsplash.com/photo-1581092334501-64c7c1c08f94?auto=format&fit=crop&w=1400&q=80",
       text: "Certified Electrician Services"
     },
+    welder: {
+      img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80",
+      text: "Trusted Welder Services"
+    },
+    painter: {
+      img: "https://images.unsplash.com/photo-1524594154901-66f0c7b7a7e3?auto=format&fit=crop&w=1400&q=80",
+      text: "Professional Painter Services"
+    },
     ac: {
       img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=80",
       text: "AC Repair & Installation"
@@ -205,25 +238,12 @@
   };
 
   function changeBanner(service){
-    hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('${banners[service].img}')`;
+    hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('${banners[service].img}')`;
     heroTitle.innerText = banners[service].text;
   }
 
-  function openService(service){
-    // Banner change + URL update
-    changeBanner(service);
-    window.location.href = `index.html?service=${service}`;
-  }
-
-  // Read URL query
-  const urlParams = new URLSearchParams(window.location.search);
-  const service = urlParams.get('service');
-
-  if(service && banners[service]){
-    changeBanner(service);
-  } else {
-    changeBanner("carpenter"); // default
-  }
+  // Default banner
+  changeBanner("carpenter");
 </script>
 
 </body>
