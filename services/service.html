@@ -1,120 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tasknear Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Service Details | Tasknear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-    }
-
-    header {
-      background: #0d6efd;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .banner {
-      background: #ffffff;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .banner h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #222;
-    }
-
-    .banner p {
-      color: #555;
-      margin: 10px 0 20px;
-    }
-
-    .whatsapp-btn {
-      display: inline-block;
-      background: #25d366;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .details {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    .details h2 {
-      margin-top: 0;
-      color: #0d6efd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      color: #aaa;
-      font-size: 14px;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7fb;
+}
+header{
+  background:#1f2937;
+  color:#fff;
+  padding:14px;
+  text-align:center;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+.banner{
+  background:#e5e7eb;
+  padding:40px 20px;
+  border-radius:12px;
+  text-align:center;
+}
+.banner h1{
+  margin-bottom:10px;
+}
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  background:#22c55e;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+ul{
+  margin-top:20px;
+}
+footer{
+  background:#1f2937;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  margin-top:40px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h2>Tasknear</h2>
-  <p>Fast & Trusted Home Services</p>
+  <h2>Tasknear Service</h2>
 </header>
 
-<div class="banner">
-  <h1 id="serviceName">Service</h1>
-  <p>Fast & Trusted Service Near You</p>
+<div class="container">
+  <div class="banner">
+    <h1 id="serviceTitle">Service</h1>
+    <p>Fast & Trusted Service Near You</p>
+    <a class="btn" href="https://wa.me/919756468154">📲 Book on WhatsApp</a>
+  </div>
 
-  <a id="whatsappLink" class="whatsapp-btn" href="#" target="_blank">
-    📲 Book on WhatsApp
-  </a>
-</div>
-
-<div class="details">
-  <h2>Service Details</h2>
-  <p>
-    Our professional <strong id="serviceText">service</strong> experts are available
-    in Noida, Delhi & Ghaziabad.
-    We provide affordable pricing, fast response, and trusted professionals.
-  </p>
+  <h3>Why choose us?</h3>
+  <ul>
+    <li>✔ Verified professionals</li>
+    <li>✔ Affordable pricing</li>
+    <li>✔ Same-day service</li>
+    <li>✔ Noida · Delhi · Ghaziabad</li>
+  </ul>
 </div>
 
 <footer>
-  © 2026 Tasknear. All rights reserved.
+  <p>📞 +91 97564 68154</p>
+  <p>© 2026 Tasknear</p>
 </footer>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const service = params.get("service") || "Service";
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service");
 
-  const serviceFormatted = service
-    .replace("-", " ")
-    .replace(/\b\w/g, c => c.toUpperCase());
+const names = {
+  plumber: "Plumber Service",
+  electrician: "Electrician Service",
+  carpenter: "Carpenter Service",
+  painter: "Painter Service",
+  welder: "Welder Service",
+  "ac-installation": "AC Installation Service"
+};
 
-  document.getElementById("serviceName").innerText = serviceFormatted;
-  document.getElementById("serviceText").innerText = serviceFormatted;
-
-  const phone = "919756468154";
-  const message = `Hello Tasknear, I want to book ${serviceFormatted} service`;
-
-  document.getElementById("whatsappLink").href =
-    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+document.getElementById("serviceTitle").innerText =
+  names[service] || "Our Service";
 </script>
 
 </body>
