@@ -1,73 +1,39 @@
-function book() {
-  alert("Booking feature coming soon 🚀");
-}
-/* ================= SERVICE DATA ================= */
 const services = {
   carpenter: {
     title: "Professional Carpenter Services",
-    area: "Noida • Delhi • Ghaziabad",
-    banner: "images/carpenter.jpg",
-    whatsapp: "Hello, I want to book a Carpenter service"
+    image: "images/carpenter.jpg"
   },
   plumber: {
-    title: "Fast & Trusted Plumber Services",
-    area: "Noida • Delhi • Ghaziabad",
-    banner: "images/plumber.jpg",
-    whatsapp: "Hello, I want to book a Plumber service"
+    title: "Fast & Trusted Plumber Near You",
+    image: "images/plumber.jpg"
   },
   electrician: {
-    title: "Certified Electrician Services",
-    area: "Noida • Delhi • Ghaziabad",
-    banner: "images/electrician.jpg",
-    whatsapp: "Hello, I want to book an Electrician service"
+    title: "Expert Electrician Services",
+    image: "images/electrician.jpg"
   },
   painter: {
-    title: "Professional Painter Services",
-    area: "Noida • Delhi • Ghaziabad",
-    banner: "images/painter.jpg",
-    whatsapp: "Hello, I want to book a Painter service"
+    title: "Professional Painter Near You",
+    image: "images/painter.jpg"
   },
   welder: {
-    title: "Expert Welding Services",
-    area: "Noida • Delhi • Ghaziabad",
-    banner: "images/welder.jpg",
-    whatsapp: "Hello, I want to book a Welder service"
+    title: "Skilled Welder Services",
+    image: "images/welder.jpg"
   }
 };
 
-/* ================= LOAD SERVICE ================= */
-function loadService(serviceName) {
-  const service = services[serviceName];
-  if (!service) return;
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service") || "carpenter";
 
-  // Change title text
-  document.getElementById("serviceTitle").innerText = service.title;
-  document.getElementById("serviceArea").innerText = service.area;
+const hero = document.getElementById("hero");
+const heroTitle = document.getElementById("hero-title");
+const whatsappBtn = document.getElementById("whatsappBtn");
 
-  // Change banner background
-  document.querySelector(".hero").style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${service.banner}')`;
+if (services[service]) {
+  hero.style.background =
+    `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${services[service].image}') center/cover no-repeat`;
 
-  // Update WhatsApp message
-  document.getElementById("whatsappBtn").onclick = function () {
-    bookWhatsApp(service.whatsapp);
-  };
+  heroTitle.innerText = services[service].title;
+
+  whatsappBtn.href =
+    `https://wa.me/919756468154?text=Hi, I want to book ${service} service`;
 }
-
-/* ================= WHATSAPP BOOKING ================= */
-function bookWhatsApp(message) {
-  const phone = "919756468154"; // apna number
-  const url =
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-}
-
-/* ================= CALL NOW ================= */
-function callNow() {
-  window.location.href = "tel:+919756468154";
-}
-
-/* ================= AUTO LOAD DEFAULT ================= */
-window.onload = function () {
-  loadService("carpenter"); // default service
-};
