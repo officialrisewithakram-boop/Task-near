@@ -36,11 +36,13 @@
       padding:60px 15px;
       text-align:center;
       color:#fff;
+      transition: background 0.5s ease;
     }
 
     .hero h1{
       font-size:32px;
       margin-bottom:10px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
     }
 
     .hero p{
@@ -63,6 +65,7 @@
       border-radius:10px;
       text-align:center;
       box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      cursor:pointer;
     }
 
     .card h3{
@@ -113,6 +116,13 @@
       padding:20px;
       font-size:14px;
     }
+
+    /* Responsive */
+    @media (max-width: 600px){
+      .hero h1{
+        font-size:26px;
+      }
+    }
   </style>
 </head>
 
@@ -135,22 +145,22 @@
 
 <!-- SERVICES -->
 <section id="services" class="services">
-  <div class="card" onclick="changeBanner('carpenter')">
+  <div class="card" onclick="openService('carpenter')">
     <h3>Carpenter</h3>
     <button>View</button>
   </div>
 
-  <div class="card" onclick="changeBanner('plumber')">
+  <div class="card" onclick="openService('plumber')">
     <h3>Plumber</h3>
     <button>View</button>
   </div>
 
-  <div class="card" onclick="changeBanner('electrician')">
+  <div class="card" onclick="openService('electrician')">
     <h3>Electrician</h3>
     <button>View</button>
   </div>
 
-  <div class="card" onclick="changeBanner('ac')">
+  <div class="card" onclick="openService('ac')">
     <h3>AC Service</h3>
     <button>View</button>
   </div>
@@ -159,9 +169,7 @@
 <!-- MAP -->
 <section id="map" class="map">
   <h3>📍 Our Service Area</h3>
-  <iframe 
-    src="https://www.google.com/maps?q=Noida&output=embed">
-  </iframe>
+  <iframe src="https://www.google.com/maps?q=Noida&output=embed"></iframe>
 </section>
 
 <footer>
@@ -179,30 +187,43 @@
 
   const banners = {
     carpenter: {
-      img: "https://images.unsplash.com/photo-1581579186981-8a48bdfd9bdb",
+      img: "https://images.unsplash.com/photo-1581579186981-8a48bdfd9bdb?auto=format&fit=crop&w=1400&q=80",
       text: "Professional Carpenter Services"
     },
     plumber: {
-      img: "https://images.unsplash.com/photo-1607400201515-c2c41f60c6c4",
+      img: "https://images.unsplash.com/photo-1607400201515-c2c41f60c6c4?auto=format&fit=crop&w=1400&q=80",
       text: "Expert Plumber Near You"
     },
     electrician: {
-      img: "https://images.unsplash.com/photo-1581092334501-64c7c1c08f94",
+      img: "https://images.unsplash.com/photo-1581092334501-64c7c1c08f94?auto=format&fit=crop&w=1400&q=80",
       text: "Certified Electrician Services"
     },
     ac: {
-      img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
+      img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=80",
       text: "AC Repair & Installation"
     }
   };
 
   function changeBanner(service){
-    hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('${banners[service].img}')`;
+    hero.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('${banners[service].img}')`;
     heroTitle.innerText = banners[service].text;
   }
 
-  // Default banner
-  changeBanner("carpenter");
+  function openService(service){
+    // Banner change + URL update
+    changeBanner(service);
+    window.location.href = `index.html?service=${service}`;
+  }
+
+  // Read URL query
+  const urlParams = new URLSearchParams(window.location.search);
+  const service = urlParams.get('service');
+
+  if(service && banners[service]){
+    changeBanner(service);
+  } else {
+    changeBanner("carpenter"); // default
+  }
 </script>
 
 </body>
