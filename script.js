@@ -2,7 +2,8 @@ const services = {
   carpenter: {
     title: "Professional Carpenter Services",
     image: "images/carpenter.jpg"
-  },
+img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80",
+text: "Trusted Welder Services"  },
   plumber: {
     title: "Fast & Trusted Plumber Near You",
     image: "images/plumber.jpg"
