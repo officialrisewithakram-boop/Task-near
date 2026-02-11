@@ -1,24 +1,27 @@
 const services = {
   carpenter: {
     title: "Professional Carpenter Services",
-    image: "images/carpenter.jpg"
-img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80",
-text: "Trusted Welder Services"  },
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80"
+  },
+
   plumber: {
     title: "Fast & Trusted Plumber Near You",
-    image: "images/plumber.jpg"
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80"
   },
+
   electrician: {
     title: "Expert Electrician Services",
-    image: "images/electrician.jpg"
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80"
   },
+
   painter: {
     title: "Professional Painter Near You",
-    image: "images/painter.jpg"
+    image: "https://images.unsplash.com/photo-1598300053651-47d3c4c1a77d?auto=format&fit=crop&w=1400&q=80"
   },
+
   welder: {
-    title: "Skilled Welder Services",
-    image: "images/welder.jpg"
+    title: "Trusted Welder Services",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=80"
   }
 };
 
