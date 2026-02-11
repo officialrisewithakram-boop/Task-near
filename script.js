@@ -18,16 +18,14 @@ const slides = [
 
 let index = 0;
 const hero = document.getElementById("hero");
-const title = document.getElementById("hero-title");
-const text = document.getElementById("hero-text");
+const heroTitle = document.getElementById("hero-title");
+const heroText = document.getElementById("hero-text");
 
 function changeSlide() {
   const slide = slides[index];
-  hero.style.background =
-    `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${slide.image}') center/cover no-repeat`;
-  title.innerText = slide.title;
-  text.innerText = slide.text;
-
+  hero.style.background = `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${slide.image}') center/cover no-repeat`;
+  heroTitle.innerText = slide.title;
+  heroText.innerText = slide.text;
   index = (index + 1) % slides.length;
 }
 
