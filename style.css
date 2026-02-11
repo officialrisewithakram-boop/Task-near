@@ -15,18 +15,26 @@ body {
 
 /* ================= HEADER ================= */
 header {
-  background: #1f2937;
-  padding: 14px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+header{
+  background:#1f2937;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.logo img{
+  height:38px;
+}
 }
 
 /* ================= NAV ================= */
