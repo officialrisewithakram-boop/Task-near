@@ -1,70 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Service Details | Tasknear</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const services = {
+  carpenter: {
+    title: "Professional Carpenter Services",
+    image: "images/carpenter.jpg"
+  },
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #222;
-      text-align: center;
-    }
+  plumber: {
+    title: "Fast & Trusted Plumber Near You",
+    image: "images/plumber.jpg"
+  },
 
-    header {
-      background: #1f2937;
-      padding: 15px;
-      color: #fff;
-      font-size: 20px;
-    }
+  electrician: {
+    title: "Expert Electrician Services",
+    image: "images/electrician.jpg"
+  },
 
-    .banner {
-      padding: 40px 15px;
-      background: #e5e7eb;
-    }
+  painter: {
+    title: "Professional Painter Near You",
+    image: "images/painter.jpg"
+  },
 
-    .banner h1 {
-      margin-bottom: 10px;
-    }
+  welder: {
+    title: "Trusted Welder Services",
+    image: "images/welder.jpg"
+  }
+};
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #25D366;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service") || "carpenter";
 
-<header>Tasknear</header>
+const hero = document.getElementById("hero");
+const heroTitle = document.getElementById("hero-title");
+const whatsappBtn = document.getElementById("whatsappBtn");
 
-<div class="banner">
-  <h1 id="serviceName">Service</h1>
-  <p>Fast & Trusted Service Near You</p>
+if (services[service]) {
+  hero.style.background =
+    `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${services[service].image}') center/cover no-repeat`;
 
-  <a id="whatsappLink" class="btn" target="_blank">
-    📲 Book Now on WhatsApp
-  </a>
-</div>
+  heroTitle.innerText = services[service].title;
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const service = params.get("service") || "service";
-
-  document.getElementById("serviceName").innerText =
-    service.replace("-", " ").toUpperCase();
-
-  document.getElementById("whatsappLink").href =
-    "https://wa.me/919756468154?text=I want to book " + service;
-</script>
-
-</body>
-</html>
+  whatsappBtn.href =
+    `https://wa.me/919756468154?text=Hi, I want to book ${service} service`;
+}
